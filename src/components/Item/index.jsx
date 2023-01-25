@@ -1,21 +1,25 @@
-import React from 'react';
+import React from "react";
 // import ItemCount from '../ItemCount';
-import { Link } from 'react-router-dom';
-import { AiOutlineShopping } from 'react-icons/ai';
+import { Link } from "react-router-dom";
+import { AiOutlineShopping } from "react-icons/ai";
 
 const Item = ({ product }) => {
   return (
-    <div className='col text-center '>
-      <div className='card h-100'>
-        <img src={product.image} className='card-img-top img-fluid' alt={`id-${product.id}`} />
+    <div className="col text-center ">
+      <div className="card h-100">
+        <img
+          src={product.image}
+          className="card-img-top img-fluid"
+          alt={`id-${product.id}`}
+        />
 
-        <div className='card-body d-flex flex-column m-3 justify-content-end'>
-          <h2 className='card-title '>{product.title}</h2>
-          <h5 className='card-text'>${product.price}</h5>
+        <div className="card-body d-flex flex-column m-3 justify-content-end">
+          <h2 className="card-title ">{product.title}</h2>
+          <h5 className="card-text">${product.price}</h5>
         </div>
 
-        <div className='card-footer '>
-          <Link to={`/detail/${product.id}`} className=''>
+        <div className="card-footer ">
+          <Link to={`/detail/${product.id}`} className="">
             <AiOutlineShopping style={{ height: 35, width: 35 }} />
           </Link>
         </div>
@@ -23,33 +27,33 @@ const Item = ({ product }) => {
         {/* Offcanvas right
          */}
         <button
-          class='btn btn-primary'
-          type='button'
-          data-bs-toggle='offcanvas'
-          data-bs-target='#offcanvasRight'
-          aria-controls='offcanvasRight'
+          className="btn btn-primary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
         >
           Detalle Producto
         </button>
 
         <div
-          class='offcanvas offcanvas-end'
-          tabindex='-1'
-          id='offcanvasRight'
-          aria-labelledby='offcanvasRightLabel'
+          className="offcanvas offcanvas-end"
+          tabIndex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
         >
-          <div class='offcanvas-header'>
-            <h5 class='offcanvas-title' id='offcanvasRightLabel'>
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasRightLabel">
               Offcanvas right
             </h5>
             <button
-              type='button'
-              class='btn-close'
-              data-bs-dismiss='offcanvas'
-              aria-label='Close'
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
             ></button>
           </div>
-          <div class='offcanvas-body'>...</div>
+          <div className="offcanvas-body">...</div>
         </div>
       </div>
       {/* Offcanvas right

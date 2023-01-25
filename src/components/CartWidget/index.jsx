@@ -1,8 +1,22 @@
-import React from 'react'
-import { HiShoppingCart } from 'react-icons/hi'
+import React, { useContext } from "react";
+import { HiShoppingCart } from "react-icons/hi";
+import { Shop } from "../../contexts/ShopProvider";
 
 const CartWidget = () => {
-  return <HiShoppingCart style={{ height: 35, width: 35, color:"red" }} />
-}
+  //Vamos a consumir de context par actualizar el carrito
 
-export default CartWidget
+  const { products } = useContext(Shop);
+
+  console.log(products);
+
+  return (
+    <>
+      <HiShoppingCart style={{ height: 35, width: 35, color: "blue" }} />
+      <span style={{ height: 35, width: 35, color: "blue" }}>
+        {products.lenght}
+      </span>
+    </>
+  );
+};
+
+export default CartWidget;
