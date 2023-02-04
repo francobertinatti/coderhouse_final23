@@ -1,21 +1,17 @@
 /* eslint-disable no-template-curly-in-string */
 const promesa = new Promise((resolve, reject) => {
-    const aceptor = Math.round(Math.random() * 100);
-    console.log(aceptor);
-    if (aceptor > 50) {
-        resolve({ value: "se acepta la promesa" });
-    }
-    reject({ value: "se rechazar la promesa" });
-})
+  const aceptor = Math.round(Math.random() * 100);
+  console.log(aceptor);
+  if (aceptor > 50) {
+    resolve({ value: "se acepta la promesa" });
+  }
+  reject({ value: "se rechazar la promesa" });
+});
 
 promesa.then(
-    result => console.log(`se resolvio correctamente: ${result.value}`),
-    error => console.log(`hubo un error: ${error.value} `)
-
-)
-
-
-
+  (result) => console.log(`se resolvio correctamente: ${result.value}`),
+  (error) => console.log(`hubo un error: ${error.value} `)
+);
 
 // const promesa = new Promise((accept, reject) => {
 //     const aceptor = Math.round(Math.random() * 100); //Valores entre 0 y 100 (entero)
@@ -35,3 +31,24 @@ promesa.then(
 // promesa
 //     .then((result) => console.log(result))
 //     .catch((error) => console.log(error));
+
+const personas = [
+  {
+    nombre: "Juan",
+    edad: 30,
+  },
+  {
+    nombre: "María",
+    edad: 25,
+  },
+  {
+    nombre: "Pedro",
+    edad: 35,
+  },
+];
+
+personas.forEach((persona) => {
+  Object.values(persona).forEach((valor) => {
+    console.log(valor); // Juan, 30, María, 25, Pedro, 35
+  });
+});
